@@ -8,7 +8,7 @@ def get_random_numbers(random_range):
     return rand_nums
 
 
-def get_guess(random_range, ranges):
+def get_guess(random_range, ranges, rand_nums):
     for i in range(ranges):
         while True:
             guess = int(input("Enter an integer from 1 to %d : " % random_range))
@@ -21,8 +21,10 @@ def get_guess(random_range, ranges):
                 break
 
 
+def main():
+    get_guess(99, 1, get_random_numbers(99))
+    get_guess(49, 10, get_random_numbers(49))
+
+
 if __name__ == "__main__":
-    rand_nums = get_random_numbers(99)
-    get_guess(99, 1)
-    rand_nums = get_random_numbers(49)
-    get_guess(49, 10)
+    main()
